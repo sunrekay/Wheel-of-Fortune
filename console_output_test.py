@@ -14,11 +14,8 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(console_output.show_answer("котопес"), True)
         self.assertEqual(console_output.show_answer("одиночество"), True)
 
-    def test_show_drum(self):
-        self.assertEqual(console_output.show_drum(), True)
-
-    def test_show_menu(self):
-        self.assertEqual(console_output.show_menu(), True)
+    def test_show_word(self):
+        self.assertEqual(console_output.show_answer("котопес"), True)
 
 
 if __name__ == '__main__':
