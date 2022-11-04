@@ -62,7 +62,7 @@ def show_menu():
     2. Я ЗНАЮ СЛОВО!
     3. Я больше не хочу в это играть (-_-)
     """)
-    number = int(input())
+    number = input()
     return number
 
 def start_menu():
@@ -70,7 +70,7 @@ def start_menu():
     1. Начать ИГРУ
     2. Нет
     """)
-    number = int(input())
+    number = input()
     return number
 
 def end_menu():
