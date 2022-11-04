@@ -13,6 +13,7 @@ def add_word(symbol, word):
     for i in range(len(word)):
         if symbol.lower() == word[i].lower():
             WORD_LIST[i] = symbol.upper()
+    return WORD_LIST
 
 
 def show_info():
@@ -34,19 +35,31 @@ if __name__ == "__main__":
 
     WORD_LIST = ["_"] * len(answer)
 
-    while start == 1:
+    while start == "1":
+
+        if "_" not in WORD_LIST:
+            console_output.end_menu()
+            break
 
         show_info()
         choose = console_output.show_menu()
         show_info()
 
-        if choose == 1:
+        if choose == "1":
 
             symbol = str(input("БУКВА: "))
             if symbol in answer:
+                print("""
+    ЕСТЬ ТАКАЯ БУКВА!
+                """)
                 add_word(symbol, answer)
+            else:
+                print("""
+    ТАКОЙ БУКВЫ НЕТ!
+                """)
+            time.sleep(2)
 
-        elif choose == 2:
+        elif choose == "2":
 
             word = str(input("СЛОВО: "))
             if word.lower() == answer.lower():
@@ -56,13 +69,24 @@ if __name__ == "__main__":
             print("""
     УВЫ, ЭТО НЕ ТО СЛОВО.
             """)
-            time.sleep(3)
+            time.sleep(2)
+
+        elif choose == "3":
+            print("""
+    НУ ПОКА!
+            """)
+            time.sleep(2)
+            os.system('cls')
+            break
 
         else:
-            print("НУ ПОКА!")
-            time.sleep(5)
+            print("""
+    Я НЕ ПОНИМАЮ!
+            """)
+            time.sleep(2)
             os.system('cls')
 
-    print("НУ ПОКА!")
-    time.sleep(5)
-    os.system('cls')
+    if start == "2":
+        print("НУ ПОКА!")
+        time.sleep(2)
+        os.system('cls')
